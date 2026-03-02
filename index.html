@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Country Jai | Official Site</title>
+  <meta name="description" content="Official website for Country Jai – modern country music with a UK twist. Listen on Spotify, follow on Instagram, and enquire about advertising opportunities." />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- BASIC STYLING -->
+  <style>
+    :root {
+      --bg: #050308;
+      --bg-alt: #0c0914;
+      --accent: #ffb347;      /* warm, country gold */
+      --accent-soft: rgba(255, 179, 71, 0.15);
+      --accent-strong: #ff9b2f;
+      --text: #f5f5f5;
+      --muted: #c3c3c3;
+      --border: rgba(255, 255, 255, 0.06);
+      --card-bg: rgba(16, 11, 30, 0.95);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #25132b 0, #050308 45%, #020106 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* LAYOUT */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(22px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 3, 8, 0.96),
+        rgba(5, 3, 8, 0.88),
+        rgba(5, 3, 8, 0.6)
+      );
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffe2b4, #ffb347 40%, #b76218 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2b1504;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-main {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: radial-gradient(circle at top left, rgba(255, 179, 71, 0.07), rgba(10, 6, 18, 0.85));
+      padding: 0.45rem 0.9rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255, 179, 71, 0.18);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.3rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #2b1504;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border-color: var(--border);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-icon {
+      font-size: 1.1rem;
+      line-height: 0;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      line-height: 1.08;
+      margin: 0 0 0.8rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #ffe2b4, var(--accent-strong));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      font-size: 0.99rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      opacity: 0.8;
+    }
+
+    .hero-meta strong {
+      color: #fdf3dd;
+      font-weight: 500;
+    }
+
+    .hero-card {
+      background: linear-gradient(
+        145deg,
+        rgba(11, 8, 24, 0.96),
+        rgba(10, 6, 18, 0.98)
+      );
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 1.6rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 179, 71, 0.14) 0, transparent 60%),
+        radial-gradient(circle at 90% 100%, rgba(170, 101, 255, 0.18) 0, transparent 56%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-album {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-stat-pill {
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-audio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-audio-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #32d74b;
+      box-shadow: 0 0 0 6px rgba(50, 215, 75, 0.24);
+    }
+
+    .wave {
+      display: inline-flex;
+      gap: 2px;
+      align-items: flex-end;
+    }
+
+    .wave span {
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.2), #ffffff);
+      height: 6px;
+    }
+
+    .wave span:nth-child(2) { height: 10px; }
+    .wave span:nth-child(3) { height: 4px; }
+    .wave span:nth-child(4) { height: 12px; }
+    .wave span:nth-child(5) { height: 7px; }
+
+    .hero-embed {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #000;
+      min-height: 232px;
+    }
+
+    .hero-embed iframe {
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 2.4rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-description {
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .section-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about-highlight {
+      font-weight: 500;
+      color: #fdf3dd;
+    }
+
+    .about-keyline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-top: 1.4rem;
+      font-size: 0.85rem;
+    }
+
+    .about-keyline span {
+      color: var(--muted);
+    }
+
+    .about-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 1.3rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .about-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: #fdf3dd;
+    }
+
+    .about-stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.9rem;
+      font-size: 0.82rem;
+    }
+
+    .about-stat {
+      padding: 0.4rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.16);
+    }
+
+    /* MUSIC & SOCIAL */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .spotify-embed {
+      margin-top: 0.6rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #000;
+      min-height: 152px;
+    }
+
+    .spotify-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .social-platform {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .badge-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 0%, #ffd976, #ff3473 40%, #5b4bff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .badge-icon.spotify {
+      background: radial-gradient(circle at 30% 0%, #72ff89, #1db954 45%, #005a27 100%);
+    }
+
+    .badge-label-main {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .badge-label-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .insta-preview {
+      margin-top: 0.9rem;
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(255, 255, 255, 0.16);
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    /* ADVERTISING */
+
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .ad-card {
+      background: linear-gradient(
+        145deg,
+        rgba(9, 5, 20, 0.96),
+        rgba(9, 5, 20, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.86rem;
+    }
+
+    .ad-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .ad-name {
+      font-weight: 500;
+    }
+
+    .ad-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .ad-meta strong {
+      color: #fdf3dd;
+    }
+
+    .ad-cta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .ad-price-pill {
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .ad-note {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-field {
+      flex: 1 1 220px;
+      min-width: 0;
+    }
+
+    .field-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .field-value {
+      font-size: 0.92rem;
+      color: #fdf3dd;
+      word-break: break-word;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.6rem 0 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .hero-card-inner,
+      .about-grid,
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+      }
+
+      .nav-links {
+        display: none; /* keep it simple for now – no mobile menu */
+      }
+
+      .hero-card-inner {
+        gap: 1.2rem;
+      }
+
+      .ad-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-main {
+        font-size: 1.1rem;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-mark">CJ</div>
+          <div class="brand-text">
+            <div class="brand-main">Country Jai</div>
+            <div class="brand-tagline">Modern Country. UK Story.</div>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#music">Music</a>
+          <a href="#story">Story</a>
+          <a href="#advertise">Advertise</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-cta">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>New music live now</span>
+          </div>
+          <a class="btn btn-secondary" href="https://open.spotify.com" target="_blank" rel="noopener">
+            <span class="btn-icon">▶</span>
+            <span>Listen on Spotify</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Official website</div>
+            <h1 class="hero-title">
+              Country music with a <span>British heartbeat</span>.
+            </h1>
+            <p class="hero-text">
+              Country Jai blends Nashville-inspired storytelling with a distinctly UK perspective –
+              anthems about real life, real people, and the moments that stay with you long after the chorus ends.
+            </p>
+
+            <div class="hero-cta-row">
+              <a class="btn" href="https://open.spotify.com" target="_blank" rel="noopener">
+                <span class="btn-icon">🎧</span>
+                <span>Play on Spotify</span>
+              </a>
+              <a class="btn btn-secondary" href="https://www.instagram.com" target="_blank" rel="noopener">
+                <span class="btn-icon">📸</span>
+                <span>Follow on Instagram</span>
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <span><strong>Streaming:</strong> Spotify, Apple Music, Deezer</span>
+              <span><strong>Origin:</strong> United Kingdom</span>
+              <span><strong>For fans of:</strong> modern country & heartfelt pop</span>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Featured track">
+            <div class="hero-card-inner">
+              <div>
+                <div class="hero-tag">Featured track</div>
+                <div class="hero-album">Your latest single title here</div>
+                <div class="hero-audio-badge">
+                  <span class="hero-audio-dot"></span>
+                  <span>Streaming worldwide · Live now</span>
+                  <span class="wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </span>
+                </div>
+                <div class="hero-stat-row">
+                  <div class="hero-stat-pill">🎵 Country / Pop crossover</div>
+                  <div class="hero-stat-pill">⏱ ~3 min</div>
+                  <div class="hero-stat-pill">⭐ Perfect for playlists</div>
+                </div>
+                <p style="font-size:0.86rem;color:var(--muted);max-width:19rem;margin:0;">
+                  Hit play below or add Country Jai to your favourite playlists to bring a little
+                  country storytelling to your day.
+                </p>
+              </div>
+
+              <div class="hero-embed">
+                <!-- Replace the src below with your own Spotify embed link.
+                     Example: https://open.spotify.com/embed/artist/YOUR_ARTIST_ID -->
+                <iframe
+                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1lVhptIYRda"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY / ABOUT -->
+    <section id="story">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-title">The story so far</div>
+            <div class="section-pill">Country Jai · Artist profile</div>
+          </div>
+          <p class="section-description">
+            A UK artist with a country heart – balancing everyday life, big dreams, and songs that sound
+            just as at home in a small bar as they do on a festival stage.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Country Jai weaves real stories into modern country tracks – the kind you belt out on a long
+              drive or keep on repeat when you need a lift. Blending classic influences with a chart-ready
+              sound, the music draws on family, friends, football, and the highs and lows of life in the UK.
+            </p>
+            <p>
+              From heartfelt ballads to crowd-ready anthems, every song is built around one idea:
+              <span class="about-highlight">if it matters to real people, it belongs in a song</span>.
+            </p>
+
+            <div class="about-keyline">
+              <span>🎙 Independent UK artist</span>
+              <span>📲 Active on social media & streaming</span>
+              <span>📌 Available for collaborations, sync & live bookings</span>
+            </div>
+          </div>
+
+          <aside class="about-card">
+            <h3>Country Jai at a glance</h3>
+            <p>
+              A growing digital audience and strong online engagement make Country Jai a compelling
+              partner for brands, events and campaigns that want to reach real people across the UK.
+            </p>
+            <div class="about-stat-row">
+              <div class="about-stat">🎧 Streaming growth across key platforms</div>
+              <div class="about-stat">📱 High-engagement social content</div>
+              <div class="about-stat">🤝 Open to brand & creator partnerships</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC & SOCIAL -->
+    <section id="music">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Listen & connect</div>
+            <div class="section-pill">Streaming & social</div>
+          </div>
+          <p class="section-description">
+            Stream the latest tracks, follow on socials, and stay close to new releases, behind-the-scenes
+            moments and live announcements.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <!-- MUSIC CARD -->
+          <div class="card">
+            <div class="card-title">Stream Country Jai</div>
+            <div class="card-subtitle">
+              Click below to open the full artist page on Spotify and add songs to your favourite playlists.
+            </div>
+
+            <a class="btn" href="https://open.spotify.com" target="_blank" rel="noopener">
+              <span class="btn-icon">🎧</span>
+              <span>Open artist page on Spotify</span>
+            </a>
+
+            <div class="spotify-embed" aria-label="Spotify artist or playlist embed">
+              <!-- Replace the src with your actual artist or playlist embed URL -->
+              <iframe
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- SOCIAL CARD -->
+          <div class="card">
+            <div class="card-title">Follow the journey</div>
+            <div class="card-subtitle">
+              Day-to-day life, writing sessions, studio moments and more – follow along on Instagram.
+            </div>
+
+            <div class="social-links">
+              <div class="social-row">
+                <div class="social-platform">
+                  <div class="badge-icon">📸</div>
+                  <div>
+                    <div class="badge-label-main">Instagram</div>
+                    <div class="badge-label-sub">@countryjai (example)</div>
+                  </div>
+                </div>
+                <a class="btn btn-secondary" href="https://www.instagram.com" target="_blank" rel="noopener">
+                  <span>View profile</span>
+                </a>
+              </div>
+
+              <div class="insta-preview">
+                <!--
+                  To embed your live Instagram feed or a specific post:
+                  1. Go to the post/profile on Instagram.
+                  2. Use Instagram's "Embed" option to generate the code.
+                  3. Replace this placeholder box with that embed snippet.
+                -->
+                Instagram feed preview area · Replace this box with the official Instagram embed code
+                once you have it from your profile.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVERTISING / PARTNERSHIPS -->
+    <section id="advertise">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Advertising & partnerships</div>
+            <div class="section-pill">Professional brand placements</div>
+          </div>
+          <p class="section-description">
+            Country Jai offers a small number of curated advertising and partnership opportunities –
+            designed to feel authentic, respectful to listeners, and valuable for brands.
+          </p>
+        </div>
+
+        <div class="ad-grid">
+          <article class="ad-card">
+            <div class="ad-label">Digital placement</div>
+            <div class="ad-name">Website banner</div>
+            <div class="ad-meta">
+              Feature your brand in a prominent banner placement on the official Country Jai website,
+              ideal for music-aligned products, venues and events.
+            </div>
+            <div class="ad-cta-row">
+              <div class="ad-price-pill">From: tailored packages</div>
+              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Website%20Banner%20Enquiry">
+                Enquire
+              </a>
+            </div>
+          </article>
+
+          <article class="ad-card">
+            <div class="ad-label">Content partnership</div>
+            <div class="ad-name">Social & campaign features</div>
+            <div class="ad-meta">
+              Work together on bespoke content, social campaigns or competitions that align your brand
+              with Country Jai’s audience and creative style.
+            </div>
+            <div class="ad-cta-row">
+              <div class="ad-price-pill">Scope-based</div>
+              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Content%20Partnership%20Enquiry">
+                Discuss ideas
+              </a>
+            </div>
+          </article>
+
+          <article class="ad-card">
+            <div class="ad-label">Live & experiences</div>
+            <div class="ad-name">Events & sponsorship</div>
+            <div class="ad-meta">
+              Explore sponsorship for live shows, special releases or charity initiatives to create
+              memorable, brand-positive experiences.
+            </div>
+            <div class="ad-cta-row">
+              <div class="ad-price-pill">By arrangement</div>
+              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Events%20%26%20Sponsorship%20Enquiry">
+                Start a conversation
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="ad-note">
+          All advertising and partnerships are considered on a case-by-case basis to ensure a good fit
+          with the music, the audience, and Country Jai’s values.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Contact</div>
+            <div class="section-pill">Bookings · Press · General</div>
+          </div>
+          <p class="section-description">
+            For bookings, collaborations, press, advertising or anything else, use the details below
+            to get in touch.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="field-label">Email</div>
+          <div class="field-value">
+            <a href="mailto:hello@countryjai.com">hello@countryjai.com</a>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-field">
+              <div class="field-label">Bookings & live</div>
+              <div class="field-value">Use the subject line “Booking enquiry”</div>
+            </div>
+            <div class="contact-field">
+              <div class="field-label">Press & media</div>
+              <div class="field-value">Use the subject line “Press / media”</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Country Jai. All rights reserved.</div>
+        <div class="footer-links">
+          <span>Site by Country Jai.</span>
+          <a href="mailto:hello@countryjai.com?subject=Website%20Advertising">Advertising enquiries</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
