@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Country Jai | Official Site</title>
-  <meta name="description" content="Official website for Country Jai – modern country music with a UK twist. Listen on Spotify, follow on Instagram, and enquire about advertising opportunities." />
+  <meta name="description" content="Official website for Country Jai – modern country music with a UK twist. Listen to Still Dreaming and more on Spotify, and follow @countryjai.music on Instagram." />
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Rye = western style, Poppins = clean body text -->
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- BASIC STYLING -->
   <style>
@@ -52,8 +53,6 @@
       display: block;
     }
 
-    /* LAYOUT */
-
     .page {
       min-height: 100vh;
       display: flex;
@@ -94,12 +93,12 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
     .logo-mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 20%, #ffe2b4, #ffb347 40%, #b76218 100%);
       display: flex;
@@ -114,13 +113,13 @@
     .brand-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     .brand-main {
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.14em;
+      font-family: "Rye", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
@@ -251,10 +250,12 @@
     }
 
     .hero-title {
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-family: "Rye", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: clamp(2.4rem, 4vw, 3rem);
       line-height: 1.08;
       margin: 0 0 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .hero-title span {
@@ -295,120 +296,59 @@
       font-weight: 500;
     }
 
-    .hero-card {
-      background: linear-gradient(
-        145deg,
-        rgba(11, 8, 24, 0.96),
-        rgba(10, 6, 18, 0.98)
-      );
+    .hero-artwork {
       border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      padding: 1.6rem 1.5rem;
-      position: relative;
       overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(255, 179, 71, 0.14) 0, transparent 60%),
-        radial-gradient(circle at 90% 100%, rgba(170, 101, 255, 0.18) 0, transparent 56%);
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow-soft);
       position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 1.6rem;
-      align-items: center;
     }
 
-    .hero-tag {
-      font-size: 0.8rem;
+    .hero-artwork img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-artwork-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(5, 3, 8, 0.85);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.3rem 0.85rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      color: rgba(255, 255, 255, 0.75);
-      margin-bottom: 0.4rem;
+      color: var(--accent);
     }
 
-    .hero-album {
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: 0.7rem;
+    .hero-artwork-caption {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.1rem;
+      right: 1.1rem;
+      background: linear-gradient(
+        to top,
+        rgba(5, 3, 8, 0.9),
+        rgba(5, 3, 8, 0.0)
+      );
+      padding-top: 3rem;
+      padding-bottom: 0.5rem;
+      font-size: 0.9rem;
     }
 
-    .hero-stat-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-size: 0.78rem;
+    .artwork-title {
+      font-family: "Rye", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .artwork-tagline {
+      font-size: 0.85rem;
       color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-stat-pill {
-      padding: 0.3rem 0.7rem;
-      border-radius: var(--radius-pill);
-      background: rgba(0, 0, 0, 0.42);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .hero-audio-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: var(--radius-pill);
-      background: rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-audio-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #32d74b;
-      box-shadow: 0 0 0 6px rgba(50, 215, 75, 0.24);
-    }
-
-    .wave {
-      display: inline-flex;
-      gap: 2px;
-      align-items: flex-end;
-    }
-
-    .wave span {
-      width: 2px;
-      border-radius: 999px;
-      background: linear-gradient(to top, rgba(255, 255, 255, 0.2), #ffffff);
-      height: 6px;
-    }
-
-    .wave span:nth-child(2) { height: 10px; }
-    .wave span:nth-child(3) { height: 4px; }
-    .wave span:nth-child(4) { height: 12px; }
-    .wave span:nth-child(5) { height: 7px; }
-
-    .hero-embed {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #000;
-      min-height: 232px;
-    }
-
-    .hero-embed iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
     }
 
     /* SECTIONS */
@@ -546,7 +486,7 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: #000;
-      min-height: 152px;
+      min-height: 232px;
     }
 
     .spotify-embed iframe {
@@ -585,10 +525,6 @@
       font-size: 1.1rem;
     }
 
-    .badge-icon.spotify {
-      background: radial-gradient(circle at 30% 0%, #72ff89, #1db954 45%, #005a27 100%);
-    }
-
     .badge-label-main {
       font-size: 0.9rem;
       font-weight: 500;
@@ -599,80 +535,27 @@
       color: var(--muted);
     }
 
-    .insta-preview {
-      margin-top: 0.9rem;
+    .insta-grid-wrapper {
+      margin-top: 1rem;
       border-radius: var(--radius-lg);
-      border: 1px dashed rgba(255, 255, 255, 0.16);
-      padding: 0.8rem;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      padding: 0.9rem;
+      background: rgba(0, 0, 0, 0.4);
       font-size: 0.8rem;
       color: var(--muted);
-      background: rgba(0, 0, 0, 0.45);
     }
 
-    /* ADVERTISING */
-
-    .ad-grid {
+    .insta-grid-placeholder {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
     }
 
-    .ad-card {
-      background: linear-gradient(
-        145deg,
-        rgba(9, 5, 20, 0.96),
-        rgba(9, 5, 20, 0.96)
-      );
-      border-radius: var(--radius-lg);
-      padding: 1.1rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      font-size: 0.86rem;
-    }
-
-    .ad-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-    }
-
-    .ad-name {
-      font-weight: 500;
-    }
-
-    .ad-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .ad-meta strong {
-      color: #fdf3dd;
-    }
-
-    .ad-cta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-      margin-top: 0.4rem;
-    }
-
-    .ad-price-pill {
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .ad-note {
-      margin-top: 1.2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
+    .insta-grid-placeholder div {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      aspect-ratio: 1 / 1;
     }
 
     /* CONTACT */
@@ -747,7 +630,6 @@
 
     @media (max-width: 900px) {
       .hero-grid,
-      .hero-card-inner,
       .about-grid,
       .two-column {
         grid-template-columns: minmax(0, 1fr);
@@ -766,15 +648,7 @@
       }
 
       .nav-links {
-        display: none; /* keep it simple for now – no mobile menu */
-      }
-
-      .hero-card-inner {
-        gap: 1.2rem;
-      }
-
-      .ad-grid {
-        grid-template-columns: minmax(0, 1fr);
+        display: none; /* simple: no mobile menu */
       }
 
       .section-header {
@@ -785,7 +659,7 @@
 
     @media (max-width: 480px) {
       .brand-main {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
       }
 
       .hero-title {
@@ -810,7 +684,7 @@
           <div class="logo-mark">CJ</div>
           <div class="brand-text">
             <div class="brand-main">Country Jai</div>
-            <div class="brand-tagline">Modern Country. UK Story.</div>
+            <div class="brand-tagline">Modern Country · UK Story</div>
           </div>
         </div>
 
@@ -818,18 +692,17 @@
           <a href="#home">Home</a>
           <a href="#music">Music</a>
           <a href="#story">Story</a>
-          <a href="#advertise">Advertise</a>
           <a href="#contact">Contact</a>
         </div>
 
         <div class="nav-cta">
           <div class="pill">
             <span class="pill-dot"></span>
-            <span>New music live now</span>
+            <span>Out now · Still Dreaming</span>
           </div>
-          <a class="btn btn-secondary" href="https://open.spotify.com" target="_blank" rel="noopener">
+          <a class="btn btn-secondary" href="#music">
             <span class="btn-icon">▶</span>
-            <span>Listen on Spotify</span>
+            <span>Listen now</span>
           </a>
         </div>
       </nav>
@@ -842,21 +715,23 @@
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow">Official website</div>
+            <div class="eyebrow">Out now</div>
             <h1 class="hero-title">
-              Country music with a <span>British heartbeat</span>.
+              <span>Still Dreaming</span><br />
+              the latest single by Country Jai.
             </h1>
             <p class="hero-text">
-              Country Jai blends Nashville-inspired storytelling with a distinctly UK perspective –
-              anthems about real life, real people, and the moments that stay with you long after the chorus ends.
+              Country Jai brings a modern country sound with a UK heartbeat – storytelling, big hooks, and
+              the kind of chorus you can’t help but sing back. Hit play, turn it up, and stay still dreaming.
+              Utilising the power of AI Technology alongside Songwriting and James' Musical Talents, Country Jai creates something new of very exciting! 
             </p>
 
             <div class="hero-cta-row">
-              <a class="btn" href="https://open.spotify.com" target="_blank" rel="noopener">
+              <a class="btn" href="#music">
                 <span class="btn-icon">🎧</span>
-                <span>Play on Spotify</span>
+                <span>Listen on Spotify</span>
               </a>
-              <a class="btn btn-secondary" href="https://www.instagram.com" target="_blank" rel="noopener">
+              <a class="btn btn-secondary" href="https://instagram.com/countryjai.music" target="_blank" rel="noopener">
                 <span class="btn-icon">📸</span>
                 <span>Follow on Instagram</span>
               </a>
@@ -864,43 +739,18 @@
 
             <div class="hero-meta">
               <span><strong>Streaming:</strong> Spotify, Apple Music, Deezer</span>
-              <span><strong>Origin:</strong> United Kingdom</span>
-              <span><strong>For fans of:</strong> modern country & heartfelt pop</span>
+              <span><strong>Single:</strong> Still Dreaming</span>
+              <span><strong>Artist:</strong> Country Jai</span>
             </div>
           </div>
 
-          <div class="hero-card" aria-label="Featured track">
-            <div class="hero-card-inner">
-              <div>
-                <div class="hero-tag">Featured track</div>
-                <div class="hero-album">Your latest single title here</div>
-                <div class="hero-audio-badge">
-                  <span class="hero-audio-dot"></span>
-                  <span>Streaming worldwide · Live now</span>
-                  <span class="wave" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </span>
-                </div>
-                <div class="hero-stat-row">
-                  <div class="hero-stat-pill">🎵 Country / Pop crossover</div>
-                  <div class="hero-stat-pill">⏱ ~3 min</div>
-                  <div class="hero-stat-pill">⭐ Perfect for playlists</div>
-                </div>
-                <p style="font-size:0.86rem;color:var(--muted);max-width:19rem;margin:0;">
-                  Hit play below or add Country Jai to your favourite playlists to bring a little
-                  country storytelling to your day.
-                </p>
-              </div>
-
-              <div class="hero-embed">
-                <!-- Replace the src below with your own Spotify embed link.
-                     Example: https://open.spotify.com/embed/artist/YOUR_ARTIST_ID -->
-                <iframe
-                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1lVhptIYRda"
-                  loading="lazy"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-                </iframe>
-              </div>
+          <div class="hero-artwork" aria-label="Still Dreaming single artwork">
+            <!-- Make sure still-dreaming-cover.jpg is uploaded to the repo root -->
+            <img src="still-dreaming-cover.jpg" alt="Country Jai - Still Dreaming artwork">
+            <div class="hero-artwork-badge">OUT NOW</div>
+            <div class="hero-artwork-caption">
+              <div class="artwork-title">Still Dreaming</div>
+              <div class="artwork-tagline">The latest single by Country Jai – available now on all major streaming platforms.</div>
             </div>
           </div>
         </div>
@@ -935,8 +785,8 @@
 
             <div class="about-keyline">
               <span>🎙 Independent UK artist</span>
-              <span>📲 Active on social media & streaming</span>
-              <span>📌 Available for collaborations, sync & live bookings</span>
+              <span>📲 Active on Spotify & Instagram</span>
+              <span>📌 Open to collaborations, sync & live bookings</span>
             </div>
           </div>
 
@@ -944,12 +794,12 @@
             <h3>Country Jai at a glance</h3>
             <p>
               A growing digital audience and strong online engagement make Country Jai a compelling
-              partner for brands, events and campaigns that want to reach real people across the UK.
+              presence for fans of modern country and beyond.
             </p>
             <div class="about-stat-row">
-              <div class="about-stat">🎧 Streaming growth across key platforms</div>
-              <div class="about-stat">📱 High-engagement social content</div>
-              <div class="about-stat">🤝 Open to brand & creator partnerships</div>
+              <div class="about-stat">🎧 Streaming on major platforms</div>
+              <div class="about-stat">📱 Behind-the-scenes on Instagram</div>
+              <div class="about-stat">🤝 Community & charity-minded</div>
             </div>
           </aside>
         </div>
@@ -962,31 +812,32 @@
         <div class="section-header">
           <div>
             <div class="section-title">Listen & connect</div>
-            <div class="section-pill">Streaming & social</div>
+            <div class="section-pill">Spotify · Instagram</div>
           </div>
           <p class="section-description">
-            Stream the latest tracks, follow on socials, and stay close to new releases, behind-the-scenes
-            moments and live announcements.
+            Stream Country Jai on Spotify and stay close to new releases, studio moments and everyday
+            life on Instagram.
           </p>
         </div>
 
         <div class="two-column">
           <!-- MUSIC CARD -->
           <div class="card">
-            <div class="card-title">Stream Country Jai</div>
+            <div class="card-title">Country Jai on Spotify</div>
             <div class="card-subtitle">
-              Click below to open the full artist page on Spotify and add songs to your favourite playlists.
+              Listen to Still Dreaming and the full catalogue, add tracks to your playlists, and follow to
+              stay updated on new releases.
             </div>
 
-            <a class="btn" href="https://open.spotify.com" target="_blank" rel="noopener">
+            <a class="btn" href="https://open.spotify.com/artist/0Q6l1XoiiMOu9s3RCmmFXI?si=qX8gCTOLR_WvUp58iqBwOQ" target="_blank" rel="noopener">
               <span class="btn-icon">🎧</span>
-              <span>Open artist page on Spotify</span>
+              <span>Open artist page</span>
             </a>
 
-            <div class="spotify-embed" aria-label="Spotify artist or playlist embed">
-              <!-- Replace the src with your actual artist or playlist embed URL -->
+            <div class="spotify-embed" aria-label="Spotify artist embed">
+              <!-- Direct embed of your artist page -->
               <iframe
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n"
+                src="https://open.spotify.com/embed/artist/0Q6l1XoiiMOu9s3RCmmFXI"
                 loading="lazy"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
               </iframe>
@@ -995,9 +846,10 @@
 
           <!-- SOCIAL CARD -->
           <div class="card">
-            <div class="card-title">Follow the journey</div>
+            <div class="card-title">Instagram · @countryjai.music</div>
             <div class="card-subtitle">
-              Day-to-day life, writing sessions, studio moments and more – follow along on Instagram.
+              Follow for the latest updates, live moments, studio clips and everything happening around
+              Country Jai.
             </div>
 
             <div class="social-links">
@@ -1005,96 +857,35 @@
                 <div class="social-platform">
                   <div class="badge-icon">📸</div>
                   <div>
-                    <div class="badge-label-main">Instagram</div>
-                    <div class="badge-label-sub">@countryjai (example)</div>
+                    <div class="badge-label-main">@countryjai.music</div>
+                    <div class="badge-label-sub">Tap below to open Instagram</div>
                   </div>
                 </div>
-                <a class="btn btn-secondary" href="https://www.instagram.com" target="_blank" rel="noopener">
+                <a class="btn btn-secondary" href="https://instagram.com/countryjai.music" target="_blank" rel="noopener">
                   <span>View profile</span>
                 </a>
               </div>
 
-              <div class="insta-preview">
+              <div class="insta-grid-wrapper">
+                <strong>Instagram grid</strong><br />
+                Latest 9 posts from @countryjai.music.
+                <div class="insta-grid-placeholder" aria-hidden="true">
+                  <!-- Placeholder squares for visual layout. Replace this whole div with your real Instagram grid embed code. -->
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                </div>
                 <!--
-                  To embed your live Instagram feed or a specific post:
-                  1. Go to the post/profile on Instagram.
-                  2. Use Instagram's "Embed" option to generate the code.
-                  3. Replace this placeholder box with that embed snippet.
+                  To show your real 3x3 grid, use a free Instagram widget (e.g. SnapWidget, LightWidget, etc.):
+                  1. Sign in with your Instagram @countryjai.music.
+                  2. Generate a 3x3 grid widget.
+                  3. They will give you an <iframe> or <script> snippet.
+                  4. Replace the .insta-grid-placeholder <div> above with that snippet.
                 -->
-                Instagram feed preview area · Replace this box with the official Instagram embed code
-                once you have it from your profile.
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ADVERTISING / PARTNERSHIPS -->
-    <section id="advertise">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Advertising & partnerships</div>
-            <div class="section-pill">Professional brand placements</div>
-          </div>
-          <p class="section-description">
-            Country Jai offers a small number of curated advertising and partnership opportunities –
-            designed to feel authentic, respectful to listeners, and valuable for brands.
-          </p>
-        </div>
-
-        <div class="ad-grid">
-          <article class="ad-card">
-            <div class="ad-label">Digital placement</div>
-            <div class="ad-name">Website banner</div>
-            <div class="ad-meta">
-              Feature your brand in a prominent banner placement on the official Country Jai website,
-              ideal for music-aligned products, venues and events.
-            </div>
-            <div class="ad-cta-row">
-              <div class="ad-price-pill">From: tailored packages</div>
-              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Website%20Banner%20Enquiry">
-                Enquire
-              </a>
-            </div>
-          </article>
-
-          <article class="ad-card">
-            <div class="ad-label">Content partnership</div>
-            <div class="ad-name">Social & campaign features</div>
-            <div class="ad-meta">
-              Work together on bespoke content, social campaigns or competitions that align your brand
-              with Country Jai’s audience and creative style.
-            </div>
-            <div class="ad-cta-row">
-              <div class="ad-price-pill">Scope-based</div>
-              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Content%20Partnership%20Enquiry">
-                Discuss ideas
-              </a>
-            </div>
-          </article>
-
-          <article class="ad-card">
-            <div class="ad-label">Live & experiences</div>
-            <div class="ad-name">Events & sponsorship</div>
-            <div class="ad-meta">
-              Explore sponsorship for live shows, special releases or charity initiatives to create
-              memorable, brand-positive experiences.
-            </div>
-            <div class="ad-cta-row">
-              <div class="ad-price-pill">By arrangement</div>
-              <a class="btn btn-secondary" href="mailto:hello@countryjai.com?subject=Events%20%26%20Sponsorship%20Enquiry">
-                Start a conversation
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <p class="ad-note">
-          All advertising and partnerships are considered on a case-by-case basis to ensure a good fit
-          with the music, the audience, and Country Jai’s values.
-        </p>
       </div>
     </section>
 
@@ -1107,8 +898,7 @@
             <div class="section-pill">Bookings · Press · General</div>
           </div>
           <p class="section-description">
-            For bookings, collaborations, press, advertising or anything else, use the details below
-            to get in touch.
+            For bookings, collaborations, press or anything else, use the details below to get in touch.
           </p>
         </div>
 
@@ -1140,7 +930,8 @@
         <div>© <span id="year"></span> Country Jai. All rights reserved.</div>
         <div class="footer-links">
           <span>Site by Country Jai.</span>
-          <a href="mailto:hello@countryjai.com?subject=Website%20Advertising">Advertising enquiries</a>
+          <a href="https://instagram.com/countryjai.music" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://open.spotify.com/artist/0Q6l1XoiiMOu9s3RCmmFXI?si=qX8gCTOLR_WvUp58iqBwOQ" target="_blank" rel="noopener">Spotify</a>
         </div>
       </div>
     </div>
